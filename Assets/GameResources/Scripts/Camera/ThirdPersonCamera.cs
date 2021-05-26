@@ -24,15 +24,17 @@ namespace Camera
         void Update()
         {
             rotationDeltaHorizontal = Input.GetAxis("Mouse X") * Sensivity;
-            rotationDeltaVertical = ClampVerticalAngle(Input.GetAxis("Mouse Y") * -Sensivity, -MaxVerticalAngle, MaxVerticalAngle);
-
-            rotationHorizontal = Mathf.Repeat(rotationHorizontal + rotationDeltaHorizontal, 360f);
-            rotationVertical += rotationDeltaVertical;
+            rotationDeltaVertical = Input.GetAxis("Mouse Y") * -Sensivity;
         }
 
         private void LateUpdate()
         {
-            transform.RotateAround(Target.position, Vector3.up, rotationDeltaHorizontal);
+            rotationDeltaVertical = ClampVerticalAngle(rotationDeltaVertical, -MaxVerticalAngle, MaxVerticalAngle);
+
+            rotationHorizontal = Mathf.Repeat(rotationHorizontal + rotationDeltaHorizontal, 360f);
+            rotationVertical += rotationDeltaVertical;
+
+            Target.Rotate(Vector3.up, rotationDeltaHorizontal);
             transform.RotateAround(Target.position, transform.right, rotationDeltaVertical);
         }
 
