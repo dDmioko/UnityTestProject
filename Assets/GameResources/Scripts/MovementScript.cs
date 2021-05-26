@@ -18,8 +18,16 @@ public class MovementScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float x = transform.position.x + (horizontal * MoveSpeed);
-        float z = transform.position.z + (vertical * MoveSpeed);
-        transform.position = new Vector3(x, transform.position.y, z);
+        float coef = 0;
+        if (Mathf.Abs(horizontal) > 0 || Mathf.Abs(vertical) > 0)
+        {
+            coef = 1 / Mathf.Sqrt(vertical * vertical + horizontal * horizontal);
+        }
+
+        float x = MoveSpeed * coef * horizontal;
+        float z = MoveSpeed * coef * vertical;
+
+        transform.position += z * transform.forward;
+        transform.position += x * transform.right;
     }
 }

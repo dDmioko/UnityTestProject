@@ -13,11 +13,9 @@ namespace Camera
         [SerializeField]
         private float MaxVerticalAngle = 85f;
 
-        [SerializeField]
         private float rotationVertical;
         private float rotationHorizontal;
 
-        [SerializeField]
         private float rotationDeltaVertical;
         private float rotationDeltaHorizontal;
 
