@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad43f1f8d7339242a13a8cf59483ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1
+  MoveSpeed: 0.2
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 136011748}
-  Sensivity: 5
+  Sensivity: 2
   MaxVerticalAngle: 85
   rotationVertical: 0
   rotationDeltaVertical: 0

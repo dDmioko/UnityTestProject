@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementScript : MonoBehaviour
 {
     [SerializeField]
-    private float MoveSpeed = 1f;
+    private float MoveSpeed = 0.2f;
 
     private float horizontal;
     private float vertical;

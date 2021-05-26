@@ -9,7 +9,7 @@ namespace Camera
         [SerializeField]
         private Transform Target;
         [SerializeField]
-        private float Sensivity = 5f;
+        private float Sensivity = 2f;
         [SerializeField]
         private float MaxVerticalAngle = 85f;
 
