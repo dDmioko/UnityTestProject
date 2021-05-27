@@ -21,8 +21,8 @@ namespace Camera
 
         void Update()
         {
-            rotationDeltaHorizontal = Input.GetAxis("Mouse X") * Sensivity;
-            rotationDeltaVertical = Input.GetAxis("Mouse Y") * -Sensivity;
+            //rotationDeltaHorizontal = Input.GetAxis("Mouse X") * Sensivity;
+            //rotationDeltaVertical = Input.GetAxis("Mouse Y") * -Sensivity;
         }
 
         private void LateUpdate()

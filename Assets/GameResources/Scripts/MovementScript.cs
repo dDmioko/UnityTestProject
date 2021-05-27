@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovementScript : MonoBehaviour
 {
@@ -10,24 +9,44 @@ public class MovementScript : MonoBehaviour
     private float horizontal;
     private float vertical;
 
-    private void Update()
+    private PlayerActions inputActions;
+
+    private void OnEnable()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        inputActions = new PlayerActions();
+
+        inputActions.Enable();
+        inputActions.Walking.Movement.performed += OnMovement;
+        inputActions.Walking.Movement.canceled += OnEndMovement;
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Disable();
+        inputActions.Walking.Movement.performed -= OnMovement;
+        inputActions.Walking.Movement.canceled -= OnEndMovement;
     }
 
     private void FixedUpdate()
     {
-        float coef = 0;
-        if (Mathf.Abs(horizontal) > 0 || Mathf.Abs(vertical) > 0)
-        {
-            coef = 1 / Mathf.Sqrt(vertical * vertical + horizontal * horizontal);
-        }
-
-        float x = MoveSpeed * coef * horizontal;
-        float z = MoveSpeed * coef * vertical;
+        float x = MoveSpeed * horizontal;
+        float z = MoveSpeed * vertical;
 
         transform.position += z * transform.forward;
         transform.position += x * transform.right;
+    }
+
+    private void OnMovement(InputAction.CallbackContext context)
+    {
+        Vector2 input = context.ReadValue<Vector2>();
+
+        horizontal = input.x;
+        vertical = input.y;
+    }
+
+    private void OnEndMovement(InputAction.CallbackContext context)
+    {
+        horizontal = 0;
+        vertical = 0;
     }
 }

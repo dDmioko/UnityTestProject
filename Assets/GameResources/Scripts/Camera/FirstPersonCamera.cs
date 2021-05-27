@@ -16,8 +16,8 @@ namespace Camera
 
         void Update()
         {
-            rotationHorizontal += Input.GetAxis("Mouse X") * Sensivity;
-            rotationVertical -= Input.GetAxis("Mouse Y") * Sensivity;
+            //rotationHorizontal += Input.GetAxis("Mouse X") * Sensivity;
+            //rotationVertical -= Input.GetAxis("Mouse Y") * Sensivity;
 
             rotationHorizontal = Mathf.Repeat(rotationHorizontal, 360f);
             rotationVertical = Mathf.Clamp(rotationVertical, -MaxVerticalAngle, MaxVerticalAngle);
