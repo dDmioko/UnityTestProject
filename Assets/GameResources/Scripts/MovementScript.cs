@@ -3,8 +3,7 @@ using UnityEngine.InputSystem;
 
 public class MovementScript : MonoBehaviour
 {
-    [SerializeField]
-    private float MoveSpeed = 0.2f;
+    [SerializeField] private float MoveSpeed = 0.2f;
 
     private float horizontal;
     private float vertical;

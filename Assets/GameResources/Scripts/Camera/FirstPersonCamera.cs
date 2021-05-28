@@ -6,10 +6,8 @@ namespace Camera
 {
     public class FirstPersonCamera : MonoBehaviour
     {
-        [SerializeField]
-        private float Sensivity = 5f;
-        [SerializeField]
-        private float MaxVerticalAngle = 85f;
+        [SerializeField] private float Sensivity = 5f;
+        [SerializeField] private float MaxVerticalAngle = 85f;
 
         private float rotationVertical;
         private float rotationHorizontal;

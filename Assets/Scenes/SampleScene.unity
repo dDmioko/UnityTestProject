@@ -234,9 +234,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 0.2
-  horizontal: 0
-  vertical: 0
-  magnitude: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

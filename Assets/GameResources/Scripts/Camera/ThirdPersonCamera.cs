@@ -6,12 +6,9 @@ namespace Camera
 {
     public class ThirdPersonCamera : MonoBehaviour
     {
-        [SerializeField]
-        private Transform Target;
-        [SerializeField]
-        private float Sensivity = 2f;
-        [SerializeField]
-        private float MaxVerticalAngle = 85f;
+        [SerializeField] private Transform Target;
+        [SerializeField] private float Sensivity = 2f;
+        [SerializeField] private float MaxVerticalAngle = 85f;
 
         private float rotationVertical;
         private float rotationHorizontal;
