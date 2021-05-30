@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 136011748}
-  Sensivity: 2
+  Sensivity: 0.1
   MaxVerticalAngle: 85
 --- !u!1 &1293796385
 GameObject:

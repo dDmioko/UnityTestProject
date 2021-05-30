@@ -12,6 +12,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "CameraMovement",
+                    "type": "Value",
+                    "id": "c71a3224-20d1-41a5-aed2-389ceea1dfe5",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -69,6 +77,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "f79cf035-e495-4aa2-a5ae-3e13c395b176",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

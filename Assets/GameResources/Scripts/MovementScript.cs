@@ -14,14 +14,14 @@ public class MovementScript : MonoBehaviour
     {
         inputActions = new PlayerActions();
 
-        inputActions.Enable();
+        inputActions.Walking.Enable();
         inputActions.Walking.Movement.performed += OnMovement;
         inputActions.Walking.Movement.canceled += OnEndMovement;
     }
 
     private void OnDisable()
     {
-        inputActions.Disable();
+        inputActions.Walking.Disable();
         inputActions.Walking.Movement.performed -= OnMovement;
         inputActions.Walking.Movement.canceled -= OnEndMovement;
     }
